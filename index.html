@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caravan Routes</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.32/esri/themes/light/main.css" />
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar">
+        <div class="logo-title">
+            <a href="#">
+                <img src="assets/icons/Tent_Icon.png" alt="">
+                <p>Resurrection City<span>Digital Atlas</span></p>
+            </a>
+        </div>
+
+        <ul class="nav-items">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Imagining</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Planning & Building</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Living & Leaving</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Afterlives</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+        </ul>
+    </nav>
+    <!--End Navbar-->
+
+    <!--Splash Page-->
+
+    <!-- <div class="splash-page"></div> -->
+
+    <div class="splash-container">
+        <div class="splash-inner">
+            <div class="splash-title">
+                <img src="assets/icons/Tent_Icon.png" alt="">
+                <div class="splash-title-text">
+                    <p>Resurrection City</p><p>Digital Atlas</p>
+                </div>
+            </div>
+            <div class="panel-line"></div>
+            <p>Perhaps one of the most impressive organizational feats of the Poor People’s Campaign was the widespread efforts of demonstrators planning and joining caravans across the nation that travelled to Washington, D.C. These caravans were organized locally and coordinated with the SCLC to map out routes, rally locations, sites to rest, and pick up more demonstrators. Like the entirety of the Poor People’s Campaign, the demonstrators and their activity was watched closely by military informers and journalists. The caravans, much like Resurrection City, were deliberately designed to be highly visible in order to mobilize more participants and raise greater awareness of their causes. The caravan participants were a diverse, multiracial group representing communities across the country. Select a route to see where the caravans stopped and what different causes they might have represented.</p>
+            <button type="button" class="splash-btn">Go to the Atlas</button>
+        </div>
+    </div>
+
+    <!--End Splash Page-->
+
+    <!--Left Panel Buttons-->
+
+    <div class="left-panel-btn-container">
+        <div id="panel-btn" class="panel-btn">
+            <i class="fa-solid fa-lightbulb"></i>
+        </div>
+
+        <div id="help-btn" class="help-btn">
+            <i class="fa-solid fa-question"></i>
+        </div>
+    </div>
+
+    <!--Right Panel Buttons-->
+
+    <div class="right-panel-btn-container">
+        <div id="filter-btn" class="filter-btn">
+            <i class="fa-solid fa-gear"></i>
+        </div>
+    </div>
+
+    <!--End Panel Buttons-->
+
+    <!--Filter / Legend Panel-->
+
+    <div class="filter-legend-container">
+        <div class="filter-title">
+            <h4>Filter Caravan Routes</h4>
+            <i id="filter-close" class="fa-solid fa-close"></i>
+        </div>
+        <div class="filter-container">
+            <select class="caravan-filter" id="caravan-filter">
+                <option value="0">Select a Caravan</option>
+                <option value="1">Caravan One (Silver)</option>
+                <option value="2">Caravan Two (Red)</option>
+                <option value="3">Caravan Three (Pink)</option>
+                <option value="4">Caravan Four (Black)</option>
+                <option value="5">Caravan Five (Blue)</option>
+                <option value="6">Caravan Six (Green)</option>
+                <option value="7">Caravan Seven (Light Blue)</option>
+                <option value="8">Caravan Eight (Yellow)</option>
+                <option value="9">Caravan Nine (Orange)</option>
+            </select>
+            <button id="filter-reset-btn">Reset Filter</button>
+        </div>
+        <h4>Legend</h4>
+        <div class="legend-container">
+            <div class="legend">
+                <div class="route-container">
+                    <h5>Caravan One</h5>
+                    <hr>
+                </div>
+                <div class="route-container">
+                    <h5>Caravan Two</h5>
+                    <hr>
+                </div>
+                <div class="route-container">
+                    <h5>Caravan Three</h5>
+                    <hr>
+                </div><div class="route-container">
+                    <h5>Caravan Four</h5>
+                    <hr>
+                </div>
+                <div class="route-container">
+                    <h5>Caravan Five</h5>
+                    <hr>
+                </div>
+                <div class="route-container">
+                    <h5>Caravan Six</h5>
+                    <hr>
+                </div>
+                <div class="route-container">
+                    <h5>Caravan Seven</h5>
+                    <hr>
+                </div>
+                <div class="route-container">
+                    <h5>Caravan Eight</h5>
+                    <hr>
+                </div>
+                <div class="route-container">
+                    <h5>Caravan Nine</h5>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--End Filter / Legend Panel-->
+
+    <!--Side Panel-->
+
+    <div class="side-panel">
+        <div class="title-close">
+            <div class="title-logo">
+                <!-- <img src="assets/icons/Tent_Icon.png" alt=""> -->
+                <h3>Caravan Routes</h3>
+            </div>        
+            <i id="panel-close" class="fa-solid fa-close"></i>
+        </div>
+        <div class="panel-line"></div>
+        <div class="side-panel-text">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam cum maiores veritatis necessitatibus exercitationem magni itaque culpa molestiae nemo cupiditate sint, ad, numquam, quidem ut. Dicta accusantium eum temporibus sunt neque illum iste, aliquam atque cumque quis ea? Labore distinctio dolor architecto animi exercitationem suscipit?</p>
+            <img class="app-image" src="./assets/images/placeholder.jpg" alt="Aerial View of Resurrection City" data-caption="An aerial image of Resurrection City on the National Mall.">
+            <p>A delectus laboriosam, aperiam impedit voluptates excepturi suscipit illo quibusdam similique ducimus, placeat animi ab dignissimos harum, sit quis. Necessitatibus quaerat minus non quia totam, est asperiores temporibus ea earum delectus nostrum ex, libero, magni iusto? Explicabo sint repellendus error mollitia dicta assumenda. Repellat laudantium nobis quae corrupti officiis numquam alias ad molestiae illo! Laborum.</p>
+            <img class="app-image" src="./assets/images/placeholder2.jpg" alt="Aerial View of Resurrection City" data-caption="Another aerial image of Resurrection City on the National Mall.">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam cum maiores veritatis necessitatibus exercitationem magni itaque culpa molestiae nemo cupiditate sint, ad, numquam, quidem ut. Dicta accusantium eum temporibus sunt neque illum iste, aliquam atque cumque quis ea? Labore distinctio dolor architecto animi exercitationem suscipit? A delectus laboriosam, aperiam impedit voluptates excepturi suscipit illo quibusdam similique ducimus, placeat animi ab dignissimos harum, sit quis. Necessitatibus quaerat minus non quia totam, est asperiores temporibus ea earum delectus nostrum ex, libero, magni iusto? Explicabo sint repellendus error mollitia dicta assumenda. Repellat laudantium nobis quae corrupti officiis numquam alias ad molestiae illo! Laborum.</p>
+        </div>
+    </div>
+
+    <!--End Side Panel-->
+
+    <!--Help Panel-->
+
+    <div id="help-panel" class="help-panel">
+        <div class="title-close">
+            <div class="title-logo">
+                <!-- <img src="assets/icons/Tent_Icon.png" alt=""> -->
+                <h3>Using the App</h3>
+            </div>
+            <i id="help-close" class="fa-solid fa-close"></i>
+        </div>
+        <div class="panel-line"></div>
+        <div class="help-panel-text">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam cum maiores veritatis necessitatibus exercitationem magni itaque culpa molestiae nemo cupiditate sint, ad, numquam, quidem ut. Dicta accusantium eum temporibus sunt neque illum iste, aliquam atque cumque quis ea? Labore distinctio dolor architecto animi exercitationem suscipit? A delectus laboriosam, aperiam impedit voluptates excepturi suscipit illo quibusdam similique ducimus, placeat animi ab dignissimos harum, sit quis. Necessitatibus quaerat minus non quia totam, est asperiores temporibus ea earum delectus nostrum ex, libero, magni iusto? Explicabo sint repellendus error mollitia dicta assumenda. Repellat laudantium nobis quae corrupti officiis numquam alias ad molestiae illo! Laborum.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam cum maiores veritatis necessitatibus exercitationem magni itaque culpa molestiae nemo cupiditate sint, ad, numquam, quidem ut. Dicta accusantium eum temporibus sunt neque illum iste, aliquam atque cumque quis ea? Labore distinctio dolor architecto animi exercitationem suscipit? A delectus laboriosam, aperiam impedit voluptates excepturi suscipit illo quibusdam similique ducimus, placeat animi ab dignissimos harum, sit quis. Necessitatibus quaerat minus non quia totam, est asperiores temporibus ea earum delectus nostrum ex, libero, magni iusto? Explicabo sint repellendus error mollitia dicta assumenda. Repellat laudantium nobis quae corrupti officiis numquam alias ad molestiae illo! Laborum.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam cum maiores veritatis necessitatibus exercitationem magni itaque culpa molestiae nemo cupiditate sint, ad, numquam, quidem ut. Dicta accusantium eum temporibus sunt neque illum iste, aliquam atque cumque quis ea? Labore distinctio dolor architecto animi exercitationem suscipit? A delectus laboriosam, aperiam impedit voluptates excepturi suscipit illo quibusdam similique ducimus, placeat animi ab dignissimos harum, sit quis. Necessitatibus quaerat minus non quia totam, est asperiores temporibus ea earum delectus nostrum ex, libero, magni iusto? Explicabo sint repellendus error mollitia dicta assumenda. Repellat laudantium nobis quae corrupti officiis numquam alias ad molestiae illo! Laborum.</p>
+        </div>
+    </div>
+
+    <!--End Help Panel-->
+
+    <!--Cities Popup-->
+
+    <div class="popup" id="city-card">
+        <div class="popup-container">
+            <img src="#" class="app-image" id="city-popup-image-id">
+            <div class="caravan-container">
+                <p class="caravan"></p>
+            </div>
+            <div class="panel-line"></div>
+            <div class="place-date-container">
+                <p class="city-state-date"></p>
+            </div>
+            <p class="details"></p>
+        </div>
+    </div>
+
+    <!--End Cities Popup-->
+
+    <!--Route Popup-->
+
+    <div class="popup" id="caravan-card">
+        <div class="popup-container">
+            <img src="#" class="app-image" id="caravan-popup-image-id">
+            <div class="caravan-container">
+                <p class="caravan-info"></p>
+            </div>
+            <div class="panel-line"></div>
+            <div class="place-date-container">
+                <p class="caravan-number"></p>
+            </div>
+        </div>
+    </div>
+
+    <!--End Route Popup-->
+
+    <!--About Modal-->
+
+    <div class="modal-container" id="about-modal">
+        <div class="modal-inner">
+            <a href="#" class="modal-close" id="about-close">
+                <i class="fa-solid fa-close"></i>
+            </a>
+            <h3>About the Project</h3>
+            <div class="panel-line"></div>
+            <div">
+                <p>Perhaps one of the most impressive organizational feats of the Poor People’s Campaign was the widespread efforts of demonstrators planning and joining caravans across the nation that travelled to Washington, D.C. These caravans were organized locally and coordinated with the SCLC to map out routes, rally locations, sites to rest, and pick up more demonstrators. Like the entirety of the Poor People’s Campaign, the demonstrators and their activity was watched closely by military informers and journalists. The caravans, much like Resurrection City, were deliberately designed to be highly visible in order to mobilize more participants and raise greater awareness of their causes. The caravan participants were a diverse, multiracial group representing communities across the country. Select a route to see where the caravans stopped and what different causes they might have represented.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--End About Modal-->
+
+    <!--Picture Modal-->
+
+    <div class="modal-container" id="img-modal">
+        <div class="modal-inner">
+            <a href="#" class="modal-close" id="img-close">
+                <i class="fa-solid fa-close"></i>
+            </a>
+            <img id="neatModalImg" src="" alt="" data="">
+            <span id="img-caption"></span>
+        </div>
+    </div>
+
+    <!--End Picture Modal-->
+
+    <!--Timelines-->
+    <div class="timelines">
+        <!-- Timeline One -->
+        <div class="timeline-container">
+            <div>
+                <ol class="timeline">
+                    <li><span>Memphis</span><span>, Tennessee</span></li>
+                    <li><span>Marks</span><span>, Mississippi</span></li>
+                </ol>
+            </div>
+        </div>
+        <!-- Timeline Two -->
+        <div class="timeline-container">
+            <div>
+                <ol class="timeline">
+                    <li><span>Marks</span><span>, Mississippi</span></li>
+                    <li><span>Batesville</span><span>, Mississippi</span></li>
+                    <li><span>Grenada</span><span>, Mississippi</span></li>
+                    <li><span>Duck Hill</span><span>, Mississippi</span></li>
+                    <li><span>Winona</span><span>, Mississippi</span></li>
+                    <li><span>Kilmichael</span><span>, Mississippi</span></li>
+                    <li><span>Europa</span><span>, Mississippi</span></li>
+                    <li><span>Starksville</span><span>, Mississippi</span></li>
+                    <li><span>Reform</span><span>, Mississippi</span></li>
+                    <li><span>Aliceville</span><span>, Mississippi</span></li>
+                    <li><span>Eutaw</span><span>, Alabama</span></li>
+                    <li><span>Tuscaloosa</span><span>, Alabama</span></li>
+                    <li><span>Vance</span><span>, Alabama</span></li>
+                    <li><span>Bessemer</span><span>, Alabama</span></li>
+                    <li><span>Birmingham</span><span>, Alabama</span></li>
+                    <li><span>Pell City</span><span>, Alabama</span></li>
+                    <li><span>Anniston</span><span>, Alabama</span></li>
+                    <li><span>Heflin</span><span>, Alabama</span></li>
+                    <li><span>Tallapoosa</span><span>, Georgia</span></li>
+                    <li><span>Douglasville</span><span>, Georgia</span></li>
+                    <li><span>Atlanta</span><span>, Georgia</span></li>
+                    <li><span>Alexandria</span><span>, Virginia</span></li>
+                    <li><span>Washington</span><span>, DC</span></li>
+                </ol>
+            </div>
+        </div>
+        <!-- Timeline Three -->
+        <div class="timeline-container">
+            <div>
+                <ol class="timeline">
+                    <li><span>Marks</span><span>, Mississippi</span></li>
+                    <li><span>Memphis</span><span>, Tennessee</span></li>
+                    <li><span>Nashville</span><span>, Tennessee</span></li>
+                    <li><span>Knoxville</span><span>, Tennessee</span></li>
+                    <li><span>Danville</span><span>, Virginia</span></li>
+                    <li><span>Washington</span><span>, DC</span></li>
+                </ol>
+            </div>
+        </div>
+        <!-- Timeline Four -->
+
+        <div class="timeline-container">
+            <div>
+                <ol class="timeline">
+                    <li><span>Edwards</span><span>, Mississippi</span></li>
+                    <li><span>Selma</span><span>, Alabama</span></li>
+                    <li><span>Montgomery</span><span>, Alabama</span></li>
+                    <li><span>Atlanta</span><span>, Georgia</span></li>
+                    <li><span>Macon</span><span>, Georgia</span></li>
+                    <li><span>Savannah</span><span>, Georgia</span></li>
+                    <li><span>Charleston</span><span>, South Carolina</span></li>
+                    <li><span>Greenville</span><span>, South Carolina</span></li>
+                    <li><span>Charlotte</span><span>, North Carolina</span></li>
+                    <li><span>Greensboro</span><span>, North Carolina</span></li>
+                    <li><span>Durham</span><span>, North Carolina</span></li>
+                    <li><span>Norfolk</span><span>, Virginia</span></li>
+                    <li><span>Waverly</span><span>, Virginia</span></li>
+                    <li><span>Richmond</span><span>, Virginia</span></li>
+                    <li><span>Fairfax</span><span>, Virginia</span></li>
+                    <li><span>Arlington</span><span>, Virginia</span></li>
+                    <li><span>Alexandria</span><span>, Virginia</span></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Timeline Five -->
+        <div class="timeline-container">
+            <div>
+                <ol class="timeline">
+                    <li><span>Chicago</span><span>, Illinois</span></li>
+                    <li><span>Indianapolis</span><span>, Indiana</span></li>
+                    <li><span>Louisville</span><span>, Kentucky</span></li>
+                    <li><span>Dayton</span><span>, Ohio</span></li>
+                    <li><span>Columbus</span><span>, Ohio</span></li>
+                    <li><span>Toledo</span><span>, Ohio</span></li>
+                    <li><span>Detroit</span><span>, Michigan</span></li>
+                    <li><span>Cleveland</span><span>, Ohio</span></li>
+                    <li><span>Pittsburgh</span><span>, Pennsyvania</span></li>
+                    <li><span>Baltimore</span><span>, Maryland</span></li>
+                    <li><span>Washington</span><span>, DC</span></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Timeline Six -->
+        <div class="timeline-container">
+            <div>
+                <ol class="timeline">
+                    <li><span>Brunswick</span><span>, Maine</span></li>
+                    <li><span>Boston</span><span>, Massachusetts</span></li>
+                    <li><span>Providence</span><span>, Rhode Island</span></li>
+                    <li><span>New Haven</span><span>, Connecticut</span></li>
+                    <li><span>Harlem</span><span>, New York</span></li>
+                    <li><span>Newark</span><span>, New Jersey</span></li>
+                    <li><span>Cranbury</span><span>, New Jersey</span></li>
+                    <li><span>Trenton</span><span>, New Jersey</span></li>
+                    <li><span>Philadelphia</span><span>, Pennsyvania</span></li>
+                    <li><span>Wilmington</span><span>, Delaware</span></li>
+                    <li><span>Baltimore</span><span>, Maryland</span></li>
+                    <li><span>Greenbelt</span><span>, Maryland</span></li>
+                    <li><span>Washington</span><span>, DC</span></li>
+                </ol>
+            </div>
+        </div>
+        <!-- Timeline Seven -->
+         <div class="timeline-container">
+            <div>
+                <ol class="timeline">
+                    <li><span>San Francisco</span><span>, California</span></li>
+                    <li><span>Reno</span><span>, Nevada</span></li>
+                    <li><span>Salt Lake City</span><span>, Utah</span></li>
+                    <li><span>Denver</span><span>, Colorado</span></li>
+                    <li><span>Kansas City</span><span>, Missouri</span></li>
+                    <li><span>St. Louis</span><span>, Missouri</span></li>
+                    <li><span>Louisville</span><span>, Kentucky</span></li>
+                    <li><span>Los Angeles</span><span>, California</span></li>
+                    <li><span>Phoenix</span><span>, Arizona</span></li>
+                    <li><span>El Paso</span><span>, Texas</span></li>
+                    <li><span>Albequerque</span><span>, New Mexico</span></li>
+                    <li><span>Dallas</span><span>, Texas</span></li>
+                    <li><span>Tulsa</span><span>, Oklahoma</span></li>
+                    <li><span>Washington</span><span>, DC</span></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Timeline Eight -->
+
+        <div class="timeline-container">
+            <div>
+                <ol class="timeline">
+                    <li><span>Seattle</span><span>, Washington</span></li>
+                    <li><span>Spokane</span><span>, Washington</span></li>
+                    <li><span>Billings</span><span>, Montana</span></li>
+                    <li><span>Biskmarck</span><span>, North Dakota</span></li>
+                    <li><span>Minneapolis</span><span>, Minnesota</span></li>
+                    <li><span>Madison</span><span>, Wisconsin</span></li>
+                    <li><span>Toledo</span><span>, Ohio</span></li>
+                    <li><span>Washington</span><span>, DC</span></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Timeline Nine -->
+
+        <div class="timeline-container">
+            <div>
+                <ol class="timeline">
+                    <li><span>Fairmount</span><span>, West Virginia</span></li>
+                    <li><span>Moundsville</span><span>, Ohio</span></li>
+                    <li><span>Washington</span><span>, DC</span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!--End Timelines-->
+
+    <div id="viewDiv"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://js.arcgis.com/4.32/"></script>
+    <script src="./script/renderers.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/labels.js"></script>
+</body>
+</html>
