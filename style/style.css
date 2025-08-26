@@ -141,7 +141,7 @@ body,
 /*Splash Page*/
 
 .splash-container {
-    background-image: url(../assets/images/SCLCcover.jpg);
+    background-image: url("../assets/images/SCLCcover.jpg");
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
