@@ -304,7 +304,7 @@ body,
     position: absolute;
     bottom: 2rem;
     right: 2rem;
-    width: 25rem;
+    width: 20rem;
     height: auto;
     padding: 1rem;
     background: linear-gradient(var(--Background-Blue), var(--Background-Blue-Alt));
@@ -543,11 +543,12 @@ body,
 .model-transcript-text p,
 #img-caption {
     font-family: var(--Bodoni);
-    font-size: .8rem;
+    font-size: .9rem;
     color: var(--Dark-Brown);
     margin: .75rem 0;
-    font-weight: 500;
-    line-height: 1.3rem;
+    font-weight: 400;
+    line-height: 1.35rem;
+    letter-spacing: .02rem;
 }
 
 .side-panel-text img {
@@ -736,9 +737,11 @@ body,
 
 .details {
     font-family: var(--Bodoni);
-    font-size: .8rem;
+    font-size: .9rem;
     font-weight: 500;
     color: var(--Dark-Brown);
+    line-height: 1.35rem;
+    letter-spacing: .02rem;
 }
 
 /***End City/Caravan Popup Styling***/
