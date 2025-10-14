@@ -50,7 +50,8 @@
                 </div>
             </div>
             <div class="panel-line"></div>
-            <p>Perhaps one of the most impressive organizational feats of the Poor People’s Campaign was the widespread efforts of demonstrators planning and joining caravans across the nation that travelled to Washington, D.C. These caravans were organized locally and coordinated with the SCLC to map out routes, rally locations, sites to rest, and pick up more demonstrators. Like the entirety of the Poor People’s Campaign, the demonstrators and their activity was watched closely by military informers and journalists. The caravans, much like Resurrection City, were deliberately designed to be highly visible in order to mobilize more participants and raise greater awareness of their causes. The caravan participants were a diverse, multiracial group representing communities across the country. Select a route to see where the caravans stopped and what different causes they might have represented.</p>
+            <p>Perhaps one of the most impressive organizational feats of the Poor People's Campaign were the widespread efforts of demonstrators planning and joining caravans across the nation that travelled to Washington, D.C. These caravans were organized locally and coordinated with the SCLC to map out routes, rally locations, sites to rest, and pick up more demonstrators. Like the entirety of the Poor People's Campaign, the demonstrators were closely watched by military informers and journalists.</p>
+            <p>Much like Resurrection City, the caravans were deliberately designed to be highly visible to mobilize participation and raise public awareness. The caravan participants were a diverse, multiracial group representing communities across the country. Select a route to see where the caravans stopped and what cause they were fighting for.</p>
             <button type="button" class="splash-btn">Go to the Atlas</button>
         </div>
     </div>
@@ -89,15 +90,15 @@
         <div class="filter-container">
             <select class="caravan-filter" id="caravan-filter">
                 <option value="0">Select a Caravan</option>
-                <option value="1">Caravan One (Silver)</option>
-                <option value="2">Caravan Two (Red)</option>
-                <option value="3">Caravan Three (Pink)</option>
-                <option value="4">Caravan Four (Black)</option>
-                <option value="5">Caravan Five (Blue)</option>
-                <option value="6">Caravan Six (Green)</option>
-                <option value="7">Caravan Seven (Light Blue)</option>
-                <option value="8">Caravan Eight (Yellow)</option>
-                <option value="9">Caravan Nine (Orange)</option>
+                <option value="1">South Silver (Freedom Train)</option>
+                <option value="2">South Red (Mule Train)</option>
+                <option value="3">South Pink (Freedom Train)</option>
+                <option value="4">South Black (Southern Caravan)</option>
+                <option value="5">West Dark Blue (Midwestern Caravan)</option>
+                <option value="6">North Green (Eastern Caravan)</option>
+                <option value="7">West Light Blue (Western Caravan)</option>
+                <option value="8">West Yellow (Western Caravan)</option>
+                <option value="9">West Orange (Western Caravan)</option>
             </select>
             <button id="filter-reset-btn">Reset Filter</button>
         </div>
@@ -105,38 +106,38 @@
         <div class="legend-container">
             <div class="legend">
                 <div class="route-container">
-                    <h5>Caravan One</h5>
+                    <h5>South Silver (Freedom Train)</h5>
                     <hr>
                 </div>
                 <div class="route-container">
-                    <h5>Caravan Two</h5>
+                    <h5>South Red (Mule Train)</h5>
                     <hr>
                 </div>
                 <div class="route-container">
-                    <h5>Caravan Three</h5>
+                    <h5>South Pink (Freedom Train)</h5>
                     <hr>
                 </div><div class="route-container">
-                    <h5>Caravan Four</h5>
+                    <h5>South Black (Southern Caravan)</h5>
                     <hr>
                 </div>
                 <div class="route-container">
-                    <h5>Caravan Five</h5>
+                    <h5>West Dark Blue (Midwestern Caravan)</h5>
                     <hr>
                 </div>
                 <div class="route-container">
-                    <h5>Caravan Six</h5>
+                    <h5>North Green (Eastern Caravan)</h5>
                     <hr>
                 </div>
                 <div class="route-container">
-                    <h5>Caravan Seven</h5>
+                    <h5>West Light Blue (Western Caravan)</h5>
                     <hr>
                 </div>
                 <div class="route-container">
-                    <h5>Caravan Eight</h5>
+                    <h5>West Yellow (Western Caravan)</h5>
                     <hr>
                 </div>
                 <div class="route-container">
-                    <h5>Caravan Nine</h5>
+                    <h5>West Orange (Western Caravan)</h5>
                     <hr>
                 </div>
             </div>
@@ -209,7 +210,11 @@
 
     <div class="popup" id="caravan-card">
         <div class="popup-container">
-            <img src="#" class="app-image" id="caravan-popup-image-id">
+            
+            <div class="caravan-image">
+                <video class="caravan-video" autoplay loop muted><source class="app-video" src="#"></video>
+                <img src="#" class="app-image" id="caravan-popup-image-id">
+            </div>
             <div class="caravan-container">
                 <p class="caravan-info"></p>
             </div>
@@ -252,6 +257,20 @@
     </div>
 
     <!--End Picture Modal-->
+
+    <!--Video Modal-->
+
+    <div class="modal-container" id="video-modal">
+        <div class="modal-inner">
+            <a href="#" class="modal-close" id="video-close">
+                <i class="fa-solid fa-close"></i>
+            </a>
+            <video id="neatModalVideo" autoplay loop muted><source class="app-video" src="#"></video>
+            <!-- <span id="img-caption"></span> -->
+        </div>
+    </div>
+
+    <!--End Video Modal-->
 
     <!--Timelines-->
     <div class="timelines">

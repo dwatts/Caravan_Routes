@@ -304,7 +304,7 @@ body,
     position: absolute;
     bottom: 2rem;
     right: 2rem;
-    width: 20rem;
+    width: 25rem;
     height: auto;
     padding: 1rem;
     background: linear-gradient(var(--Background-Blue), var(--Background-Blue-Alt));
@@ -399,6 +399,7 @@ body,
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: .1rem 0 .1rem 0;
 }
 
 .route-container.hide {
@@ -408,13 +409,14 @@ body,
 .route-container h5 {
     color: var(--Dark-Brown);
     font-family: var(--Bodoni);
-    letter-spacing: .1rem;
+    /* letter-spacing: .1rem; */
     font-size: .8rem;
+    font-weight: 500;
 }
 
 .route-container hr {
     height: auto;
-    width: 50%;
+    width: 30%;
     /* margin-right: 1rem; */
     border: none;
 }
@@ -666,6 +668,14 @@ body,
     box-shadow: 0 1rem 3rem rgb(0, 0, 0, 0.15);
 }
 
+.modal-inner video {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-radius: .5rem;
+    box-shadow: 0 1rem 3rem rgb(0, 0, 0, 0.15);
+}
+
+
 /***End About Modal***/
 
 /***City/Caravan Popup Styling***/
@@ -697,12 +707,30 @@ body,
     transition: opacity 900ms;
 }
 
+#caravan-popup-image-id.toggle {
+    display: none;
+}
+
 .popup img:hover {
     opacity: 0.85;
 }
 
 .popup .panel-line {
     margin: 0;
+}
+
+.caravan-video {
+    width: 100%;
+    height: auto;
+    border-radius: .5rem;
+}
+
+.caravan-video:hover {
+    cursor: pointer;
+}
+
+.caravan-video.toggle {
+    display: none;
 }
 
 .caravan,

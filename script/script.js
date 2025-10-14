@@ -8,6 +8,16 @@ $('.app-image').click(function (e) {
     $('#img-caption').html(caption);
 });
 
+/***Send videos to modal and launch***/
+
+$('.caravan-video').click(function (e) {
+    let location = $(e.target).attr('src')
+    // let caption = $(e.target).attr('data-caption')
+    $('#neatModalVideo').attr('src', location);
+    $('#video-modal').fadeIn(500);
+    // $('#img-caption').html(caption);
+});
+
 /***Fade in Splash Screen on Load***/
 
 $(document).ready(function(){
@@ -42,8 +52,9 @@ $('.nav-item:nth-of-type(5)').click(function () {
 
 /***Close all modals***/
 
-$('#about-close, #img-close, #transcript-close').click(function () {
+$('#about-close, #img-close, #video-close, #transcript-close').click(function () {
     $('#img-modal').fadeOut(500);
+    $('#video-modal').fadeOut(500);
     $('#about-modal').fadeOut(500);
     $('#transcript-modal').fadeOut(500);
 })
@@ -120,7 +131,7 @@ require(["esri/views/SceneView", "esri/WebScene", "esri/layers/FeatureLayer", "e
         //basemap: "topo-3d",
         basemap: customBasemap,
         ground: "world-elevation",
-        layers: [caravanRoutes, caravanStops],
+        layers: [caravanRoutes, caravanStops]
     });
 
     //map.ground.opacity = 1;
@@ -174,11 +185,13 @@ require(["esri/views/SceneView", "esri/WebScene", "esri/layers/FeatureLayer", "e
     let cityStateDate = document.querySelector('.city-state-date');
     let details = document.querySelector('.details');
 
-    //Caravan popup text selectors
+    //Caravan route popup text selectors
 
-    let imgUrlTwo = document.getElementById('caravan-popup-image-id');
+    // let imgUrlTwo = document.getElementById('caravan-popup-image-id');
     let caravanInfo = document.querySelector('.caravan-info');
     let caravanNum = document.querySelector('.caravan-number');
+    let caravanImg = document.getElementById('caravan-popup-image-id');
+    let caravanVideo = document.querySelector('.caravan-video');
 
     //Create highlight variable
 
@@ -238,18 +251,37 @@ require(["esri/views/SceneView", "esri/WebScene", "esri/layers/FeatureLayer", "e
           $('#city-card').fadeOut();
           $('#caravan-card').fadeIn();
 
-          //Temp image functionality//
-
-          const imageOne = "./assets/images/placeholder2.jpg";
-          const imageTwo = "./assets/images/placeholder4.jpg";
-
-          if(carNumber % 2 == 0) {
-            imgUrlTwo.src = `${imageOne}`
+          if (carNumber == 1 || carNumber == 4) {
+              caravanImg.classList.add('toggle');
+              caravanVideo.classList.remove('toggle');
           } else {
-            imgUrlTwo.src = `${imageTwo}`
+              caravanVideo.classList.add('toggle');
+              caravanImg.classList.remove('toggle');
+          }
+            
+          //Dynamically Add Image or Video to Popup//
+
+          // const caravanVideoOne = "./assets/video/Caravan1_PopupVideo.mp4";
+          const caravanVideoOne = "https://static.videezy.com/system/resources/previews/000/038/524/original/2018-01-7-_29_.mp4";
+          const caravanImageTwo = "./assets/images/Caravan2_PopupImage.jpg"
+          const caravanImageThree = "./assets/images/Caravan3_PopupImage.jpg"
+          const caravanVideoFour = "https://static.videezy.com/system/resources/previews/000/012/730/original/Palm_Trees_07_-_4K_res.mp4"
+
+          const placeHolderOne = "./assets/images/placeholder2.jpg";
+          
+          if(carNumber == 1) {
+            caravanVideo.src = `${caravanVideoOne}` 
+          } else if (carNumber == 2) {
+            caravanImg.src = `${caravanImageTwo}`
+          } else if (carNumber == 3) {
+            caravanImg.src = `${caravanImageThree}`
+          } else if (carNumber == 4) {
+            caravanVideo.src = `${caravanVideoFour}`
+          } else {
+            caravanImg.src = `${placeHolderOne}`
           }
 
-          //End Temp image functionality//
+          //End Dynamically Add Image or Video to Popup//
 
           //Add highlight functionality//
 
