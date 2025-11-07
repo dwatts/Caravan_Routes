@@ -1,3 +1,11 @@
+const SceneView = await $arcgis.import("@arcgis/core/views/SceneView.js");
+const WebScene = await $arcgis.import("@arcgis/core/WebScene.js");
+const FeatureLayer = await $arcgis.import("@arcgis/core/layers/FeatureLayer.js");
+const TileLayer = await $arcgis.import("@arcgis/core/layers/TileLayer.js");
+const VectorTileLayer = await $arcgis.import("@arcgis/core/layers/VectorTileLayer.js");
+const reactiveUtils = await $arcgis.import("@arcgis/core/core/reactiveUtils.js");
+const Basemap = await $arcgis.import("@arcgis/core/Basemap.js");
+
 /***Send images to modal and launch***/
 
 $('.app-image').click(function (e) {
@@ -34,14 +42,15 @@ $('.splash-btn').click(function () {
 
 $('#filter-close').click(function () {
     $('.filter-legend-container').fadeOut(700);
-    $('.right-panel-btn-container').css('display', 'flex'); 
+    $('.right-panel-btn-container').css('display', 'flex');
+    $('.filter-btn').toggleClass('off'); 
 })
 
 /***Open Filter Pane***/
 
 $('#filter-btn').click(function () {
-    $('.filter-legend-container').fadeIn(700);
-    $('.right-panel-btn-container').css('display', 'none').fadeOut(700);
+    $('.filter-legend-container').fadeToggle(700);
+    $('.filter-btn').toggleClass('off');
 })
 
 /***Trigger About Modal***/
@@ -85,7 +94,7 @@ $('#help-close').click(function(){
 
 /***Start ArcGIS JS***/
 
-require(["esri/views/SceneView", "esri/WebScene", "esri/layers/FeatureLayer", "esri/layers/TileLayer", "esri/layers/VectorTileLayer", "esri/core/reactiveUtils", "esri/Basemap"], (SceneView, WebScene, FeatureLayer, TileLayer, VectorTileLayer, reactiveUtils, Basemap) => {
+// require(["esri/views/SceneView", "esri/WebScene", "esri/layers/FeatureLayer", "esri/layers/TileLayer", "esri/layers/VectorTileLayer", "esri/core/reactiveUtils", "esri/Basemap"], (SceneView, WebScene, FeatureLayer, TileLayer, VectorTileLayer, reactiveUtils, Basemap) => {
 
     /***Add Layers***/
 
@@ -174,6 +183,36 @@ require(["esri/views/SceneView", "esri/WebScene", "esri/layers/FeatureLayer", "e
             components: []
         },
         viewingMode: "global"
+    });
+
+    /***Custom Zoom In/Out Buttons***/
+
+    function changeZoom(delta) {
+      const targetZoom = view.zoom + delta;
+      view.goTo({ zoom: targetZoom }, { duration: 400, easing: "ease-in-out" });
+    }
+
+    document.getElementById("zoom-in-btn").addEventListener("click", () => {
+      changeZoom(1);
+    });
+
+    document.getElementById("zoom-out-btn").addEventListener("click", () => {
+      changeZoom(-1);
+    });
+
+    /***Start HitTest Cursor Pointer Functionality***/
+
+    view.on("pointer-move", (event) => {
+      const opts = {
+        include: [caravanStops, caravanRoutes]
+      }
+      view.hitTest(event, opts).then((response) => {
+        if (response.results.length) {
+          document.getElementById("viewDiv").style.cursor = "pointer";
+        } else {
+          document.getElementById("viewDiv").style.cursor = "default";
+        }
+      });
     });
 
     /***Start Popup HitTest Functionality***/
@@ -447,7 +486,8 @@ require(["esri/views/SceneView", "esri/WebScene", "esri/layers/FeatureLayer", "e
             lists.forEach((list) => list.classList.remove("active"));
             li.classList.add("active");
 
-            const firstSpan = li.querySelector("span:first-of-type");
+            // const firstSpan = li.querySelector("span:first-of-type");
+            const firstSpan = li.querySelector("span:nth-of-type(2)");
             if (!firstSpan) return;
 
             const cityName = firstSpan.innerText;
@@ -500,4 +540,4 @@ require(["esri/views/SceneView", "esri/WebScene", "esri/layers/FeatureLayer", "e
 
     /***End Scale-based Renderer***/
 
-});
+// });

@@ -15,7 +15,7 @@
         <div class="logo-title">
             <a href="#">
                 <img src="assets/icons/Tent_Icon.png" alt="">
-                <p>Resurrection City<span>Digital Atlas</span></p>
+                <p>Resurrection City<span>Caravan Routes</span></p>
             </a>
         </div>
 
@@ -73,6 +73,14 @@
     <!--Right Panel Buttons-->
 
     <div class="right-panel-btn-container">
+        <div id="zoom-in-btn" class="zoom-in-btn">
+            <i class="fa-solid fa-plus"></i>
+        </div>
+
+        <div id="zoom-out-btn" class="zoom-out-btn">
+            <i class="fa-solid fa-minus"></i>
+        </div>
+
         <div id="filter-btn" class="filter-btn">
             <i class="fa-solid fa-gear"></i>
         </div>
@@ -274,141 +282,151 @@
 
     <!--Timelines-->
     <div class="timelines">
+    
         <!-- Timeline One -->
         <div class="timeline-container">
+            <p>South Silver (Freedom Train)</p>
             <div>
                 <ol class="timeline">
-                    <li><span>Memphis</span><span>, Tennessee</span></li>
-                    <li><span>Marks</span><span>, Mississippi</span></li>
+                    <li><span>Stop 1:</span><span>Memphis</span><span>, Tennessee (May 2, 1968)</span></li>
+                    <li><span>Stop 2:</span><span>Marks</span><span>, Mississippi (May 3, 1968)</span></li>
                 </ol>
             </div>
         </div>
         <!-- Timeline Two -->
         <div class="timeline-container">
+            <p>South Red (Mule Train)</p>
             <div>
+                
                 <ol class="timeline">
-                    <li><span>Marks</span><span>, Mississippi</span></li>
-                    <li><span>Batesville</span><span>, Mississippi</span></li>
-                    <li><span>Grenada</span><span>, Mississippi</span></li>
-                    <li><span>Duck Hill</span><span>, Mississippi</span></li>
-                    <li><span>Winona</span><span>, Mississippi</span></li>
-                    <li><span>Kilmichael</span><span>, Mississippi</span></li>
-                    <li><span>Europa</span><span>, Mississippi</span></li>
-                    <li><span>Starksville</span><span>, Mississippi</span></li>
-                    <li><span>Reform</span><span>, Mississippi</span></li>
-                    <li><span>Aliceville</span><span>, Mississippi</span></li>
-                    <li><span>Eutaw</span><span>, Alabama</span></li>
-                    <li><span>Tuscaloosa</span><span>, Alabama</span></li>
-                    <li><span>Vance</span><span>, Alabama</span></li>
-                    <li><span>Bessemer</span><span>, Alabama</span></li>
-                    <li><span>Birmingham</span><span>, Alabama</span></li>
-                    <li><span>Pell City</span><span>, Alabama</span></li>
-                    <li><span>Anniston</span><span>, Alabama</span></li>
-                    <li><span>Heflin</span><span>, Alabama</span></li>
-                    <li><span>Tallapoosa</span><span>, Georgia</span></li>
-                    <li><span>Douglasville</span><span>, Georgia</span></li>
-                    <li><span>Atlanta</span><span>, Georgia</span></li>
-                    <li><span>Alexandria</span><span>, Virginia</span></li>
-                    <li><span>Washington</span><span>, DC</span></li>
+                    <li><span>Stop 1:</span><span>Marks</span><span>, Mississippi (May 13, 1968)</span></li>
+                    <li><span>Stop 2:</span><span>Batesville</span><span>, Mississippi (May 13, 1968)</span></li>
+                    <li><span>Stop 3:</span><span>Grenada</span><span>, Mississippi (May 15, 1968)</span></li>
+                    <li><span>Stop 4:</span><span>Duck Hill</span><span>, Mississippi (May 21, 1968)</span></li>
+                    <li><span>Stop 5:</span><span>Winona</span><span>, Mississippi (May 22, 1968)</span></li>
+                    <li><span>Stop 6:</span><span>Kilmichael</span><span>, Mississippi (May 23, 1968)</span></li>
+                    <li><span>Stop 7:</span><span>Europa</span><span>, Mississippi (May 24, 1968)</span></li>
+                    <li><span>Stop 8:</span><span>Starksville</span><span>, Mississippi (May 26, 1968)</span></li>
+                    <li><span>Stop 9:</span><span>Reform</span><span>, Mississippi (May 29, 1968)</span></li>
+                    <li><span>Stop 10:</span><span>Aliceville</span><span>, Mississippi (May 30, 1968)</span></li>
+                    <li><span>Stop 11:</span><span>Eutaw</span><span>, Alabama (May 31, 1968)</span></li>
+                    <li><span>Stop 12:</span><span>Tuscaloosa</span><span>, Alabama (June 2, 1968)</span></li>
+                    <li><span>Stop 13:</span><span>Vance</span><span>, Alabama (June 3, 1968)</span></li>
+                    <li><span>Stop 14:</span><span>Bessemer</span><span>, Alabama (June 4, 1968)</span></li>
+                    <li><span>Stop 15:</span><span>Birmingham</span><span>, Alabama (June 5, 1968)</span></li>
+                    <li><span>Stop 16:</span><span>Leeds</span><span>, Alabama (June 6, 1968)</span></li>
+                    <li><span>Stop 17:</span><span>Pell City</span><span>, Alabama (June 8, 1968)</span></li>
+                    <li><span>Stop 18:</span><span>Anniston</span><span>, Alabama (June 10, 1968)</span></li>
+                    <li><span>Stop 19:</span><span>Heflin</span><span>, Alabama (June 11, 1968)</span></li>
+                    <li><span>Stop 20:</span><span>Tallapoosa</span><span>, Georgia (June 12, 1968)</span></li>
+                    <li><span>Stop 21:</span><span>Douglasville</span><span>, Georgia (June 13, 1968)</span></li>
+                    <li><span>Stop 22:</span><span>Atlanta</span><span>, Georgia (June 15, 1968)</span></li>
+                    <li><span>Stop 23:</span><span>Alexandria</span><span>, Virginia (June 17, 1968)</span></li>
+                    <li><span>Stop 24:</span><span>Washington</span><span>, DC (June 18, 1968)</span></li>
                 </ol>
             </div>
         </div>
         <!-- Timeline Three -->
         <div class="timeline-container">
+            <p>South Pink (Freedom Train)</p>
             <div>
                 <ol class="timeline">
-                    <li><span>Marks</span><span>, Mississippi</span></li>
-                    <li><span>Memphis</span><span>, Tennessee</span></li>
-                    <li><span>Nashville</span><span>, Tennessee</span></li>
-                    <li><span>Knoxville</span><span>, Tennessee</span></li>
-                    <li><span>Danville</span><span>, Virginia</span></li>
-                    <li><span>Washington</span><span>, DC</span></li>
+                    <li><span>Stop 1:</span><span>Marks</span><span>, Mississippi (May 8, 1968)</span></li>
+                    <li><span>Stop 2:</span><span>Memphis</span><span>, Tennessee (May 8, 1968)</span></li>
+                    <li><span>Stop 3:</span><span>Nashville</span><span>, Tennessee (May 9, 1968)</span></li>
+                    <li><span>Stop 4:</span><span>Knoxville</span><span>, Tennessee (May 10, 1968)</span></li>
+                    <li><span>Stop 5:</span><span>Danville</span><span>, Virginia (May 11, 1968)</span></li>
+                    <li><span>Stop 6:</span><span>Washington</span><span>, DC (May 12, 1968)</span></li>
                 </ol>
             </div>
         </div>
         <!-- Timeline Four -->
 
         <div class="timeline-container">
+            <p>South Black (Southern Caravan)</p>
             <div>
                 <ol class="timeline">
-                    <li><span>Edwards</span><span>, Mississippi</span></li>
-                    <li><span>Selma</span><span>, Alabama</span></li>
-                    <li><span>Montgomery</span><span>, Alabama</span></li>
-                    <li><span>Atlanta</span><span>, Georgia</span></li>
-                    <li><span>Macon</span><span>, Georgia</span></li>
-                    <li><span>Savannah</span><span>, Georgia</span></li>
-                    <li><span>Charleston</span><span>, South Carolina</span></li>
-                    <li><span>Greenville</span><span>, South Carolina</span></li>
-                    <li><span>Charlotte</span><span>, North Carolina</span></li>
-                    <li><span>Greensboro</span><span>, North Carolina</span></li>
-                    <li><span>Durham</span><span>, North Carolina</span></li>
-                    <li><span>Norfolk</span><span>, Virginia</span></li>
-                    <li><span>Waverly</span><span>, Virginia</span></li>
-                    <li><span>Richmond</span><span>, Virginia</span></li>
-                    <li><span>Fairfax</span><span>, Virginia</span></li>
-                    <li><span>Arlington</span><span>, Virginia</span></li>
-                    <li><span>Alexandria</span><span>, Virginia</span></li>
+                    <li><span>Stop 1:</span><span>Edwards</span><span>, Mississippi (May 4, 1968)</span></li>
+                    <li><span>Stop 2:</span><span>Selma</span><span>, Alabama (May 6, 1968)</span></li>
+                    <li><span>Stop 3:</span><span>Montgomery</span><span>, Alabama (May 7, 1968)</span></li>
+                    <li><span>Stop 4:</span><span>Atlanta</span><span>, Georgia (May 9, 1968)</span></li>
+                    <li><span>Stop 5:</span><span>Macon</span><span>, Georgia (May 10, 1968)</span></li>
+                    <li><span>Stop 6:</span><span>Savannah</span><span>, Georgia (May 11, 1968)</span></li>
+                    <li><span>Stop 7:</span><span>Charleston</span><span>, South Carolina (May 12, 1968)</span></li>
+                    <li><span>Stop 8:</span><span>Greenville</span><span>, South Carolina (May 13, 1968)</span></li>
+                    <li><span>Stop 9:</span><span>Charlotte</span><span>, North Carolina (May 14, 1968)</span></li>
+                    <li><span>Stop 10:</span><span>Greensboro</span><span>, North Carolina (May 15, 1968)</span></li>
+                    <li><span>Stop 11:</span><span>Durham</span><span>, North Carolina (May 16, 1968)</span></li>
+                    <li><span>Stop 12:</span><span>Norfolk</span><span>, Virginia (May 17, 1968)</span></li>
+                    <li><span>Stop 13:</span><span>Waverly</span><span>, Virginia (May 18, 1968)</span></li>
+                    <li><span>Stop 14:</span><span>Richmond</span><span>, Virginia (May 18, 1968)</span></li>
+                    <li><span>Stop 15:</span><span>Fairfax</span><span>, Virginia (May 19, 1968)</span></li>
+                    <li><span>Stop 16:</span><span>Alexandria</span><span>, Virginia (May 19, 1968)</span></li>
+                    <li><span>Stop 17:</span><span>Arlington</span><span>, Virginia (May 22, 1968)</span></li>
                 </ol>
             </div>
         </div>
 
         <!-- Timeline Five -->
         <div class="timeline-container">
+            <p>West Dark Blue (Midwestern Caravan)</p>
             <div>
                 <ol class="timeline">
-                    <li><span>Chicago</span><span>, Illinois</span></li>
-                    <li><span>Indianapolis</span><span>, Indiana</span></li>
-                    <li><span>Louisville</span><span>, Kentucky</span></li>
-                    <li><span>Dayton</span><span>, Ohio</span></li>
-                    <li><span>Columbus</span><span>, Ohio</span></li>
-                    <li><span>Toledo</span><span>, Ohio</span></li>
-                    <li><span>Detroit</span><span>, Michigan</span></li>
-                    <li><span>Cleveland</span><span>, Ohio</span></li>
-                    <li><span>Pittsburgh</span><span>, Pennsyvania</span></li>
-                    <li><span>Baltimore</span><span>, Maryland</span></li>
-                    <li><span>Washington</span><span>, DC</span></li>
+                    <li><span>Stop 1:</span><span>Chicago</span><span>, Illinois (May 8, 1968)</span></li>
+                    <li><span>Stop 2:</span><span>Indianapolis</span><span>, Indiana (May 9, 1968)</span></li>
+                    <li><span>Stop 3:</span><span>Louisville</span><span>, Kentucky (May 10, 1968)</span></li>
+                    <li><span>Stop 4:</span><span>Dayton</span><span>, Ohio (May 11, 1968)</span></li>
+                    <li><span>Stop 5:</span><span>Columbus</span><span>, Ohio (May 11, 1968)</span></li>
+                    <li><span>Stop 6:</span><span>Toledo</span><span>, Ohio (May 12, 1968)</span></li>
+                    <li><span>Stop 7:</span><span>Detroit</span><span>, Michigan (May 13, 1968)</span></li>
+                    <li><span>Stop 8:</span><span>Cleveland</span><span>, Ohio (May 14, 1968)</span></li>
+                    <li><span>Stop 9:</span><span>Pittsburgh</span><span>, Pennsylvania (May 16, 1968)</span></li>
+                    <li><span>Stop 10:</span><span>Baltimore</span><span>, Maryland (May 18, 1968)</span></li>
+                    <li><span>Stop 11:</span><span>Washington</span><span>, DC (May 19, 1968)</span></li>
                 </ol>
             </div>
         </div>
 
         <!-- Timeline Six -->
         <div class="timeline-container">
+            <p>North Green (Eastern Caravan)</p>
             <div>
                 <ol class="timeline">
-                    <li><span>Brunswick</span><span>, Maine</span></li>
-                    <li><span>Boston</span><span>, Massachusetts</span></li>
-                    <li><span>Providence</span><span>, Rhode Island</span></li>
-                    <li><span>New Haven</span><span>, Connecticut</span></li>
-                    <li><span>Harlem</span><span>, New York</span></li>
-                    <li><span>Newark</span><span>, New Jersey</span></li>
-                    <li><span>Cranbury</span><span>, New Jersey</span></li>
-                    <li><span>Trenton</span><span>, New Jersey</span></li>
-                    <li><span>Philadelphia</span><span>, Pennsyvania</span></li>
-                    <li><span>Wilmington</span><span>, Delaware</span></li>
-                    <li><span>Baltimore</span><span>, Maryland</span></li>
-                    <li><span>Greenbelt</span><span>, Maryland</span></li>
-                    <li><span>Washington</span><span>, DC</span></li>
+                    <li><span>Stop 1:</span><span>Brunswick</span><span>, Maine (May 8, 1968)</span></li>
+                    <li><span>Stop 2:</span><span>Boston</span><span>, Massachusetts (May 9, 1968)</span></li>
+                    <li><span>Stop 3:</span><span>Providence</span><span>, Rhode Island (May 10, 1968)</span></li>
+                    <li><span>Stop 4:</span><span>New Haven</span><span>, Connecticut (May 12, 1968)</span></li>
+                    <li><span>Stop 5:</span><span>Harlem</span><span>, New York (May 12, 1968)</span></li>
+                    <li><span>Stop 6:</span><span>Newark</span><span>, New Jersey (May 12, 1968)</span></li>
+                    <li><span>Stop 7:</span><span>Cranbury</span><span>, New Jersey (May 13, 1968)</span></li>
+                    <li><span>Stop 8:</span><span>Trenton</span><span>, New Jersey (May 13, 1968)</span></li>
+                    <li><span>Stop 9:</span><span>Philadelphia</span><span>, Pennsyvania (May 14, 1968)</span></li>
+                    <li><span>Stop 10:</span><span>Wilmington</span><span>, Delaware (May 15, 1968)</span></li>
+                    <li><span>Stop 11:</span><span>Baltimore</span><span>, Maryland (May 16, 1968)</span></li>
+                    <li><span>Stop 12:</span><span>Greenbelt</span><span>, Maryland (May 17, 1968)</span></li>
+                    <li><span>Stop 13:</span><span>Washington</span><span>, DC (May 18, 1968)</span></li>
                 </ol>
             </div>
         </div>
         <!-- Timeline Seven -->
          <div class="timeline-container">
+            <p>West Light Blue (Western Caravan)</p>
             <div>
                 <ol class="timeline">
-                    <li><span>San Francisco</span><span>, California</span></li>
-                    <li><span>Reno</span><span>, Nevada</span></li>
-                    <li><span>Salt Lake City</span><span>, Utah</span></li>
-                    <li><span>Denver</span><span>, Colorado</span></li>
-                    <li><span>Kansas City</span><span>, Missouri</span></li>
-                    <li><span>St. Louis</span><span>, Missouri</span></li>
-                    <li><span>Louisville</span><span>, Kentucky</span></li>
-                    <li><span>Los Angeles</span><span>, California</span></li>
-                    <li><span>Phoenix</span><span>, Arizona</span></li>
-                    <li><span>El Paso</span><span>, Texas</span></li>
-                    <li><span>Albequerque</span><span>, New Mexico</span></li>
-                    <li><span>Dallas</span><span>, Texas</span></li>
-                    <li><span>Tulsa</span><span>, Oklahoma</span></li>
-                    <li><span>Washington</span><span>, DC</span></li>
+                    <li><span>Stop 1:</span><span>San Francisco</span><span>, California (May 16, 1968)</span></li>
+                    <li><span>Stop 2:</span><span>Reno</span><span>, Nevada (May 17, 1968)</span></li>
+                    <li><span>Stop 3:</span><span>Salt Lake City</span><span>, Utah (May 18, 1968)</span></li>
+                    <li><span>Stop 4:</span><span>Denver</span><span>, Colorado (May 19, 1968)</span></li>
+                    <li><span>Stop 5:</span><span>Kansas City</span><span>, Missouri (May 20, 1968)</span></li>
+                    <li><span>Stop 6:</span><span>St. Louis</span><span>, Missouri (May 21, 1968)</span></li>
+                    <li><span>Stop 7:</span><span>Louisville</span><span>, Kentucky (May 22, 1968)</span></li>
+                    <li><span>Stop 8:</span><span>Bethesda</span><span>, Maryland (May 23, 1968)</span></li>
+                    <li><span>Stop 8:</span><span>Los Angeles</span><span>, California (May 15, 1968)</span></li>
+                    <li><span>Stop 9:</span><span>Phoenix</span><span>, Arizona (May 16, 1968)</span></li>
+                    <li><span>Stop 10:</span><span>El Paso</span><span>, Texas (May 17, 1968)</span></li>
+                    <li><span>Stop 11:</span><span>Albequerque</span><span>, New Mexico (May 18, 1968)</span></li>
+                    <li><span>Stop 12:</span><span>Dallas</span><span>, Texas (May 19, 1968)</span></li>
+                    <li><span>Stop 13:</span><span>Tulsa</span><span>, Oklahoma (May 19, 1968)</span></li>
                 </ol>
             </div>
         </div>
@@ -416,16 +434,17 @@
         <!-- Timeline Eight -->
 
         <div class="timeline-container">
+            <p>West Yellow (Western Caravan)</p>
             <div>
                 <ol class="timeline">
-                    <li><span>Seattle</span><span>, Washington</span></li>
-                    <li><span>Spokane</span><span>, Washington</span></li>
-                    <li><span>Billings</span><span>, Montana</span></li>
-                    <li><span>Biskmarck</span><span>, North Dakota</span></li>
-                    <li><span>Minneapolis</span><span>, Minnesota</span></li>
-                    <li><span>Madison</span><span>, Wisconsin</span></li>
-                    <li><span>Toledo</span><span>, Ohio</span></li>
-                    <li><span>Washington</span><span>, DC</span></li>
+                    <li><span>Stop 1:</span><span>Seattle</span><span>, Washington (May 17, 1968)</span></li>
+                    <li><span>Stop 2:</span><span>Spokane</span><span>, Washington (May 18, 1968)</span></li>
+                    <li><span>Stop 3:</span><span>Billings</span><span>, Montana (May 19, 1968)</span></li>
+                    <li><span>Stop 4:</span><span>Bismarck</span><span>, North Dakota (May 20, 1968)</span></li>
+                    <li><span>Stop 5:</span><span>Minneapolis</span><span>, Minnesota (May 21, 1968)</span></li>
+                    <li><span>Stop 6:</span><span>Madison</span><span>, Wisconsin (May 21, 1968)</span></li>
+                    <li><span>Stop 7:</span><span>Toledo</span><span>, Ohio (May 22, 1968)</span></li>
+                    <li><span>Stop 8:</span><span>Bethesda</span><span>, Maryland (May 23, 1968)</span></li>
                 </ol>
             </div>
         </div>
@@ -433,11 +452,12 @@
         <!-- Timeline Nine -->
 
         <div class="timeline-container">
+            <p>West Orange (Western Caravan)</p>
             <div>
                 <ol class="timeline">
-                    <li><span>Fairmount</span><span>, West Virginia</span></li>
-                    <li><span>Moundsville</span><span>, Ohio</span></li>
-                    <li><span>Washington</span><span>, DC</span></li>
+                    <li><span>Stop 1:</span><span>Fairmount</span><span>, West Virginia (May 30, 1968)</span></li>
+                    <li><span>Stop 2:</span><span>Moundsville</span><span>, Ohio (May 30, 1968)</span></li>
+                    <li><span>Stop 3:</span><span>Washington</span><span>, DC (May 31, 1968)</span></li>
                 </ol>
             </div>
         </div>
@@ -450,7 +470,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://js.arcgis.com/4.32/"></script>
     <script src="./script/renderers.js"></script>
-    <script src="./script/script.js"></script>
+    <script type="module" src="./script/script.js"></script>
     <script src="./script/labels.js"></script>
 </body>
 </html>

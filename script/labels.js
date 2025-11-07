@@ -9,15 +9,15 @@ const labelSymbol = {
   type: "label-3d",
   symbolLayers: {
     type: "text",
-    material: { color: "black" },
+    material: { color: "#402e32" },
     size: 11,
     background: {
       color: [236, 232, 221, 0.7]
     },
     font: {
-      family: "Bodoni Moda",
-      style: "normal",
-      weight: "normal"
+      family: "Lato",
+      // style: "normal",
+      weight: "bold"
     }
   }
 };
