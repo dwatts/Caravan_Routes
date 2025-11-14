@@ -29,7 +29,10 @@ $('.caravan-video').click(function (e) {
 /***Fade in Splash Screen on Load***/
 
 $(document).ready(function(){
-    $('.splash-container').fadeIn(700);
+    $(".splash-container")
+    .css("display", "flex")
+    .hide()
+    .fadeIn();
 });
 
 /***Close Splash Screen***/
@@ -188,8 +191,15 @@ $('#help-close').click(function(){
     /***Custom Zoom In/Out Buttons***/
 
     function changeZoom(delta) {
-      const targetZoom = view.zoom + delta;
-      view.goTo({ zoom: targetZoom }, { duration: 400, easing: "ease-in-out" });
+      const camera = view.camera.clone();
+      const scale = delta > 0 ? 0.7 : 1.3;
+      const newPos = camera.position.clone();
+      newPos.x = (newPos.x - view.center.x) * scale + view.center.x;
+      newPos.y = (newPos.y - view.center.y) * scale + view.center.y;
+      newPos.z = (newPos.z - view.center.z) * scale + view.center.z;
+      
+      camera.position = newPos;
+      view.goTo(camera, { duration: 500, easing: "ease-in-out" });
     }
 
     document.getElementById("zoom-in-btn").addEventListener("click", () => {
@@ -534,7 +544,7 @@ $('#help-close').click(function(){
       (scale) => {
         caravanRoutes.renderer = scale <= 4000000 ? routeRendererMedium : routeRendererLarge;
         caravanStops.renderer = scale >= 4000000 ? stopRendererSmall : stopRendererLarge;
-        caravanStops.labelingInfo = scale <= 4000000 ? labelClass : null;
+        caravanStops.labelingInfo = scale <= 5000000 ? labelClass : null;
       }
     );
 

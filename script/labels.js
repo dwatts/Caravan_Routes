@@ -10,9 +10,9 @@ const labelSymbol = {
   symbolLayers: {
     type: "text",
     material: { color: "#402e32" },
-    size: 11,
+    size: 9,
     background: {
-      color: [236, 232, 221, 0.7]
+      color: [236, 232, 221, 0.5]
     },
     font: {
       family: "Lato",

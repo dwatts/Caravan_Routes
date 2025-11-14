@@ -194,6 +194,8 @@ body,
     z-index: 3;
     position: absolute;
     display: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .splash-inner {
@@ -201,10 +203,6 @@ body,
     height: auto;
     background: linear-gradient(var(--Background), var(--Background-Alt));
     padding: 1.5rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: relative;
     border-radius: .5rem;
 }
 
