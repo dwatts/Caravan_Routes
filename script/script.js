@@ -424,7 +424,6 @@ $('#help-close').click(function(){
 
       //Hide / Reveal Legend items after filter
 
-
       routes.forEach((route, i) => {
         if (newValue <= 0) {
           route.classList.remove('hide');
