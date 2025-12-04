@@ -95,6 +95,15 @@ $('#help-close').click(function(){
     $('#help-btn').toggleClass('on');
 });
 
+/***Close popups***/
+
+$('#city-close, #caravan-close' ).click(function(){
+    $('#city-card').fadeOut();
+    $('#caravan-card').fadeOut();
+    highlight?.remove();
+});
+
+
 /***Start ArcGIS JS***/
 
 // require(["esri/views/SceneView", "esri/WebScene", "esri/layers/FeatureLayer", "esri/layers/TileLayer", "esri/layers/VectorTileLayer", "esri/core/reactiveUtils", "esri/Basemap"], (SceneView, WebScene, FeatureLayer, TileLayer, VectorTileLayer, reactiveUtils, Basemap) => {

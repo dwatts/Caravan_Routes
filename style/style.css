@@ -4,6 +4,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
+@font-face {
+  font-family: 'MartinDisplayBold';
+  src: url('../assets/fonts/VTCMartinDisplay-XBold.woff2') format('woff2'),
+}
+
+@font-face {
+  font-family: 'MartinDisplayBoldForward';
+  src: url('../assets/fonts/VTCMartinDisplay-XBoldForward.woff2') format('woff2'),
+}
+
 :root {
   --Anton: "Anton", sans-serif;
   --Antonio: "Antonio", sans-serif;
@@ -67,48 +77,42 @@ body,
 }
 
 .logo-title {
-    transition: transform 0.3s;
-}
-
-.logo-title:hover {
-    transform: translateY(-0.06rem);
-}
-
-.logo-title a {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-left: 3rem;
-    width: 32rem;
 }
 
 .logo-title img {
     height: 2.3rem;
     -webkit-filter: drop-shadow(.5rem .5rem .5rem #000);
     filter: drop-shadow(.5rem .5rem .5rem #000);
+    margin-right: 1.5rem;
+    transition: transform 0.3s;
 }
 
-.navbar a p {
+.logo-title img:hover {
+    transform: translateY(-0.06rem);
+}
+
+.navbar p {
     text-transform: uppercase;
     font-weight: 900;
+    font-size: 2.35rem;
+    text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    color: var(--Dark-Brown);
+    letter-spacing: .05rem;
+    cursor: default;
+    font-family: 'MartinDisplayBold', Fallback, sans-serif;
+}
+
+.navbar span {
+    font-weight: 200;
     font-size: 1.9rem;
     text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     color: var(--Dark-Brown);
-    letter-spacing: .15rem;
-    display: flex;
-    align-items: center;
-}
-
-.navbar a span {
-    /* text-transform: uppercase; */
-    font-weight: 200;
-    font-size: 1.8rem;
-    text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    color: var(--Dark-Brown);
     font-family: var(--Antonio);
-    /* letter-spacing: .1rem; */
     padding-left: .7rem;
-    padding-bottom: .25rem;
 }
 
 .nav-items {
@@ -209,42 +213,35 @@ body,
 .splash-title {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 27rem;
 }
 
 .splash-title img {
     height: 2.3rem;
     -webkit-filter: drop-shadow(.5rem .5rem .5rem #000);
     filter: drop-shadow(.5rem .5rem .5rem #000);
+    margin-right: 1.5rem;
 }
 
-.splash-title-text {
-    display: flex;
-    align-items: center ;
-    justify-content: space-evenly;
-}
-
-.splash-title-text p:nth-of-type(1) {
+.splash-inner .splash-title p {
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 1.6rem;
+    font-size: 1.95rem;
     text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     color: var(--Dark-Brown);
-    font-family: var(--Anton);
-    letter-spacing: .15rem;
+    /* font-family: var(--Anton); */
+    font-family: 'MartinDisplayBold', Fallback, sans-serif;
+    letter-spacing: .05rem;
 }
 
-.splash-title-text p:nth-of-type(2) {
-    font-weight: 100;
-    font-size: 1.5rem;
+.splash-inner .splash-title span {
+    font-weight: 200;
+    font-size: 1.6rem;
     text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     color: var(--Dark-Brown);
     font-family: var(--Antonio);
     padding-left:.5rem;
     letter-spacing: .1rem;
     text-transform: uppercase;
-    padding-bottom: .245rem;
 }
 
 .splash-btn {
@@ -262,7 +259,6 @@ body,
     color: #fff;
     font-family: var(--Bodoni);
     font-size: .8rem;
-    /* margin: 1rem 0; */
 }
 
 .splash-btn:hover {
@@ -374,6 +370,7 @@ body,
     letter-spacing: .12rem;
     font-size: 1.2rem;
     text-transform: uppercase;
+    cursor: default
 }
 
 .filter-title i {
@@ -463,6 +460,7 @@ body,
     /* letter-spacing: .1rem; */
     font-size: .9rem;
     font-weight: 400;
+    cursor: default
 }
 
 .route-container hr {
@@ -587,6 +585,7 @@ body,
     letter-spacing: .15rem;
     font-size: 1.5rem;
     text-transform: uppercase;
+    cursor: default
 }
 
 .side-panel-text p,
@@ -596,12 +595,13 @@ body,
 .model-transcript-text p,
 #img-caption {
     font-family: var(--Bodoni);
-    font-size: .9rem;
+    font-size: 1rem;
     color: var(--Dark-Brown);
     margin: .75rem 0;
     font-weight: 400;
     line-height: 1.35rem;
     letter-spacing: .02rem;
+    cursor: default
 }
 
 .side-panel-text img {
@@ -816,12 +816,32 @@ body,
 
 .details {
     font-family: var(--Bodoni);
-    font-size: .9rem;
+    font-size: 1rem;
     font-weight: 400;
     color: var(--Dark-Brown);
     line-height: 1.35rem;
     letter-spacing: .02rem;
     padding-top: .3rem;
+}
+
+.popup-close {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: .5rem;
+}
+
+.popup-close i {
+    font-size: 1.2rem;
+    color: var(--Dark-Brown);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.popup-close i:hover {
+    color: var(--Background);
+    transform: translateY(-0.09rem);
 }
 
 /***End City/Caravan Popup Styling***/
