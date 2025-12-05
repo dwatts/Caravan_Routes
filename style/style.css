@@ -601,7 +601,7 @@ body,
     font-weight: 400;
     line-height: 1.35rem;
     letter-spacing: .02rem;
-    cursor: default
+    cursor: default;
 }
 
 .side-panel-text img {
