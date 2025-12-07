@@ -585,7 +585,7 @@ body,
     letter-spacing: .15rem;
     font-size: 1.5rem;
     text-transform: uppercase;
-    cursor: default
+    cursor: default;
 }
 
 .side-panel-text p,
@@ -793,6 +793,7 @@ body,
     text-align: center;
     padding: .5rem 0;
     text-transform: uppercase;
+    cursor: default;
 }
 
 .caravan-container {
@@ -807,6 +808,7 @@ body,
     font-weight: 600;
     color: var(--Dark-Brown);
     padding-bottom: .15rem;
+    cursor: default;
 }
 
 .place-date-container {
@@ -822,6 +824,7 @@ body,
     line-height: 1.35rem;
     letter-spacing: .02rem;
     padding-top: .3rem;
+    cursor: default;
 }
 
 .popup-close {
