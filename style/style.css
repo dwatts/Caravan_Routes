@@ -208,6 +208,7 @@ body,
     background: linear-gradient(var(--Background), var(--Background-Alt));
     padding: 1.5rem;
     border-radius: .5rem;
+    display: none;
 }
 
 .splash-title {
