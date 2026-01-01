@@ -167,6 +167,7 @@ $('#city-close, #caravan-close' ).click(function(){
         map: map,
         qualityProfile: "high",
         highlights: [
+          {name: "notable", color: "#51ff00ff", haloColor: "#c8ff00ff", haloOpacity: 1, fillOpacity: 0, shadowOpacity: 0.1},
           {name: "custom", color: "#649b92", haloColor: "#649b92", haloOpacity: 0.9, fillOpacity: 0.5, shadowOpacity: 0.2}
         ],
         environment: {
@@ -366,6 +367,15 @@ $('#city-close, #caravan-close' ).click(function(){
     });
 
     /***End Start Popup HitTest Functionality***/
+
+    /***Add Highlight for Selected RC Structures***/
+
+    const specificIds = [4, 6];
+    let highlightHandle;
+
+    view.whenLayerView(caravanRoutes).then((layerViewHighlight) => {
+      highlightHandle = layerViewHighlight.highlight(specificIds, { name: "notable"});
+    });
 
     /***Filter Functionality */
 
