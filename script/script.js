@@ -116,7 +116,8 @@ $('#city-close, #caravan-close' ).click(function(){
     /***Add Layers***/
 
     const caravanStops = new FeatureLayer({
-      url: "https://services2.arcgis.com/njxlOVQKvDzk10uN/arcgis/rest/services/CaravanStops/FeatureServer",
+      // url: "https://services2.arcgis.com/njxlOVQKvDzk10uN/arcgis/rest/services/CaravanStops/FeatureServer",
+      url: "https://services3.arcgis.com/9nfxWATFamVUTTGb/arcgis/rest/services/Caravan_Stops/FeatureServer",
       //maxScale: 0,
       popupEnabled: false,
       id: 'caravanStops',
@@ -126,7 +127,8 @@ $('#city-close, #caravan-close' ).click(function(){
     });
 
     const caravanRoutes = new FeatureLayer({
-      url: "https://services2.arcgis.com/njxlOVQKvDzk10uN/arcgis/rest/services/Caravan_Routes_Final_Erase/FeatureServer",
+      // url: "https://services2.arcgis.com/njxlOVQKvDzk10uN/arcgis/rest/services/Caravan_Routes_Final_Erase/FeatureServer",
+      url: "https://services3.arcgis.com/9nfxWATFamVUTTGb/arcgis/rest/services/Caravan_Routes/FeatureServer",
       maxScale: 0,
       popupEnabled: false,
       id: 'caravanRoutes',
@@ -167,7 +169,7 @@ $('#city-close, #caravan-close' ).click(function(){
         map: map,
         qualityProfile: "high",
         highlights: [
-          {name: "notable", color: "#51ff00ff", haloColor: "#c8ff00ff", haloOpacity: 1, fillOpacity: 0, shadowOpacity: 0.1},
+          {name: "notable", color: "#ff1303", haloColor: "#ff1303", haloOpacity: 1, fillOpacity: 0, shadowOpacity: 0.1},
           {name: "custom", color: "#649b92", haloColor: "#649b92", haloOpacity: 0.9, fillOpacity: 0.5, shadowOpacity: 0.2}
         ],
         environment: {
@@ -242,14 +244,14 @@ $('#city-close, #caravan-close' ).click(function(){
 
     /***Start Popup HitTest Functionality***/
 
-    //City popup text selectors
+    //City popup image/text selectors
 
     let imgUrl = document.getElementById('city-popup-image-id');
     let caravan = document.querySelector('.caravan')
     let cityStateDate = document.querySelector('.city-state-date');
     let details = document.querySelector('.details');
 
-    //Caravan route popup text selectors
+    //Caravan route popup image/text selectors
 
     // let imgUrlTwo = document.getElementById('caravan-popup-image-id');
     let caravanInfo = document.querySelector('.caravan-info');
@@ -368,9 +370,9 @@ $('#city-close, #caravan-close' ).click(function(){
 
     /***End Start Popup HitTest Functionality***/
 
-    /***Add Highlight for Selected RC Structures***/
+    /***Add Highlight for Selected Caravan Routes***/
 
-    const specificIds = [4, 6];
+    const specificIds = [2];
     let highlightHandle;
 
     view.whenLayerView(caravanRoutes).then((layerViewHighlight) => {
