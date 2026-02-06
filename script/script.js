@@ -116,7 +116,6 @@ $('#city-close, #caravan-close' ).click(function(){
     /***Add Layers***/
 
     const caravanStops = new FeatureLayer({
-      // url: "https://services2.arcgis.com/njxlOVQKvDzk10uN/arcgis/rest/services/CaravanStops/FeatureServer",
       url: "https://services3.arcgis.com/9nfxWATFamVUTTGb/arcgis/rest/services/Caravan_Stops/FeatureServer",
       //maxScale: 0,
       popupEnabled: false,
@@ -127,7 +126,6 @@ $('#city-close, #caravan-close' ).click(function(){
     });
 
     const caravanRoutes = new FeatureLayer({
-      // url: "https://services2.arcgis.com/njxlOVQKvDzk10uN/arcgis/rest/services/Caravan_Routes_Final_Erase/FeatureServer",
       url: "https://services3.arcgis.com/9nfxWATFamVUTTGb/arcgis/rest/services/Caravan_Routes/FeatureServer",
       maxScale: 0,
       popupEnabled: false,
