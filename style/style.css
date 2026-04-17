@@ -654,7 +654,7 @@ body,
     position: fixed;
     top: 5rem;
     right: -26rem;
-    height: 80%;
+    height: auto;
     width: 25rem;
     background: linear-gradient(var(--Background-Blue), var(--Background-Blue-Alt));
     z-index: 2;
