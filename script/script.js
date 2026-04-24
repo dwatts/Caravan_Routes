@@ -61,6 +61,12 @@ $('#filter-btn').click(function () {
     $('.filter-btn').toggleClass('off');
 })
 
+/***Trigger Nav Modal***/
+
+$('.logo-title img').click(function () {
+  $('#nav-modal').fadeIn(500);
+})
+
 /***Trigger About Modal***/
 
 $('.nav-item:nth-of-type(5)').click(function () {
@@ -69,11 +75,12 @@ $('.nav-item:nth-of-type(5)').click(function () {
 
 /***Close all modals***/
 
-$('#about-close, #img-close, #video-close, #transcript-close').click(function () {
+$('#about-close, #nav-close, #img-close, #video-close, #transcript-close').click(function () {
     $('#img-modal').fadeOut(500);
     $('#video-modal').fadeOut(500);
     $('#about-modal').fadeOut(500);
     $('#transcript-modal').fadeOut(500);
+    $('#nav-modal').fadeOut(500);
 })
 
 /***Open / Close side panel***/
@@ -138,7 +145,7 @@ $('#city-close, #caravan-close' ).click(function(){
 
     const vectorTileLayer = new VectorTileLayer({
         portalItem: {
-          id: "86a5d38d9933473cb9c7645f61068295", // Custom CRMP Basemap
+          id: "5e9f2604139f4a9e87999147cdf11eda", // Custom CRMP Basemap
         },
         opacity: 0.75,
       });
@@ -326,10 +333,10 @@ $('#city-close, #caravan-close' ).click(function(){
           //Dynamically Add Image or Video to Popup//
 
           // const caravanVideoOne = "./assets/video/Caravan1_PopupVideo.mp4";
-          const caravanVideoOne = "https://static.videezy.com/system/resources/previews/000/038/524/original/2018-01-7-_29_.mp4";
+          const caravanVideoOne = "https://resurrectioncity.penndigitalscholarship.org/Caravan1_PopupVideo.mp4";
           const caravanImageTwo = "./assets/images/Caravan2_PopupImage.jpg"
           const caravanImageThree = "./assets/images/Caravan3_PopupImage.jpg"
-          const caravanVideoFour = "https://static.videezy.com/system/resources/previews/000/012/730/original/Palm_Trees_07_-_4K_res.mp4"
+          const caravanVideoFour = "https://resurrectioncity.penndigitalscholarship.org/Caravan4_PopupVideo.mp4"
 
           const placeHolderOne = "./assets/images/placeholder2.jpg";
           
